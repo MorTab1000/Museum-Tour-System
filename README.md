@@ -1,0 +1,56 @@
+# Personalized Museum Tour System
+
+![Architecture Diagram](assets/diagram.png)
+
+A smart, full-stack navigation system designed to compute efficient and personalized visitation routes through a multi-floor museum, maximizing visitor satisfaction within a strict time budget.
+
+## 🚀 Overview
+
+This project tackles a variant of the Orienteering Problem (an NP-hard problem) by implementing a Greedy Heuristic algorithm. The system balances optimality and computational efficiency to provide real-time, personalized route recommendations. It also features a self-correcting feedback loop using Bayesian statistics to refine recommendations over time.
+
+## 🛠️ Tech Stack
+
+![Technological Stack](assets/stack.png)
+
+## ✨ Key Features
+
+- **Constraint-Based Routing:** Users can define time budgets, maximum rooms, "must-see" mandatory rooms, and specific rooms to avoid.
+  
+- **Personalized Experience:** The algorithm calculates a custom cost function $H(u,v)$ that factors in user preference weights for specific art categories (e.g., painting vs. sculpture) and penalizes transitions between floors.
+  
+- **Dynamic Feedback System:**
+    - Uses **Bayesian Average** to dynamically update room quality scores while handling "Cold Start" scenarios.
+    - **Exponential Moving Average (EMA)** to adapt estimated room dwell times based on real-time crowd conditions.
+
+## 📸 System Previews
+
+* **Route Visualization:**
+    ![Route Map](assets/routes.png)
+
+
+## 👨‍💻 My Contribution
+
+This project was developed collaboratively by Mor Taboh and Amit Ben Hemo. 
+My core contributions included:
+
+- **Comprehensive Technical Documentation:** Authored the full 19-page project specification and analysis report, detailing system architecture, NP-hard problem definitions, and heuristic evaluation.
+  
+- **Frontend Development:** Designed and implemented the client-side dashboard using HTML5, CSS3, and JavaScript, including the asynchronous integration with FastAPI and real-time visualization of route maps.
+  
+- **CI/CD & Quality Assurance:** Established the continuous integration (CI) pipeline using GitHub Actions to automate environment setup and testing. Developed initial test suites using Pytest to ensure system stability.
+  
+- **Algorithmic Design (Collaborative):** Contributed to the logical design of the multi-floor routing engine, specifically focusing on floor-transition penalties and spatial constraint handling within the greedy heuristic.
+
+## ⚙️ Installation & Running Locally
+
+1. Clone the repository:
+   `git clone https://github.com/amit220105/computer_sience_project.git`
+2. Set up a virtual environment and install dependencies:
+   `pip install -r requirements.txt`
+3. Run the FastAPI server:
+   `uvicorn src.api.main:app`
+4. Access the client interface at: 
+   `http://127.0.0.1:8000/map`
+
+## 📄 Full Documentation
+For a deep dive into the system analysis, and details about the algorithm and code implementation, please refer to our [Full Project Report (PDF)](project_book.pdf).
